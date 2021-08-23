@@ -17,7 +17,11 @@ SOURCES=$(wildcard src/*.c) $(wildcard src/interpreter/*) $(wildcard benchmarks/
 NAME=icicle
 CFLAGS=-g $(SOURCES)
 BCFLAGS=-g $(SOURCES) $(wildcard benchmarks/*.*)
+OS_NAME := $(shell uname -s | tr A-Z a-z)
 
+os_check:
+	@echo $(OS_NAME)
+	
 install: src/include/%.h
 	$(CC) $(CFLAGS) $(SOURCES) -o $(wildcard bin/)icicle
 	sudo $(CC) $(CFLAGS) $(SOURCES) -o /usr/local/bin/icicle
