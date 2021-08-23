@@ -14,3 +14,24 @@
  * limitations under the License.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[])
+{
+  char version[] = "0.0.0.1";
+  char publisher[] = "Tech Penguineer";
+  if(argc==1)
+  {
+      printf("\033[1m\033[36m\n\n$$$$$$\\  $$$$$$\\  $$$$$$\\  $$$$$$\\  $$\\       $$$$$$$$\\ \n");
+      printf("\\_$$  _|$$  __$$\\ \\_$$  _|$$  __$$\\ $$ |      $$  _____|\n");
+      printf("  $$ |  $$ /  \\__|  $$ |  $$ /  \\__|$$ |      $$ |      \n");
+      printf("  $$ |  $$ |        $$ |  $$ |      $$ |      $$$$$\\    \n");
+      printf("  $$ |  $$ |        $$ |  $$ |      $$ |      $$  __|   \n");
+      printf("  $$ |  $$ |  $$\\   $$ |  $$ |  $$\\ $$ |      $$ |      \n");
+      printf("$$$$$$\\ \\$$$$$$  |$$$$$$\\ \\$$$$$$  |$$$$$$$$\\ $$$$$$$$\\ \n");
+      printf("\\______| \\______/ \\______| \\______/ \\________|\\________|\n");
+      printf("\n\nVersion: %s\nMade by: %s", version, publisher);
+  }
+  return 0;  
+}
