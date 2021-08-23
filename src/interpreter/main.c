@@ -17,12 +17,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char* argv[])
+
+void LoadPlayground(char LINE_POINTER[])
 {
-  char version[] = "0.0.0.1";
-  char publisher[] = "Tech Penguineer";
-  if(argc==1)
-  {
+      char version[] = "0.0.0.1";
+      char publisher[] = "Tech Penguineer";
+      char line_pointer[] = "\033[34m=>\033[32m";
       printf("\033[1m\033[36m\n\n$$$$$$\\  $$$$$$\\  $$$$$$\\  $$$$$$\\  $$\\       $$$$$$$$\\ \n");
       printf("\\_$$  _|$$  __$$\\ \\_$$  _|$$  __$$\\ $$ |      $$  _____|\n");
       printf("  $$ |  $$ /  \\__|  $$ |  $$ /  \\__|$$ |      $$ |      \n");
@@ -31,7 +31,26 @@ int main(int argc, char* argv[])
       printf("  $$ |  $$ |  $$\\   $$ |  $$ |  $$\\ $$ |      $$ |      \n");
       printf("$$$$$$\\ \\$$$$$$  |$$$$$$\\ \\$$$$$$  |$$$$$$$$\\ $$$$$$$$\\ \n");
       printf("\\______| \\______/ \\______| \\______/ \\________|\\________|\n");
-      printf("\n\nVersion: %s\nMade by: %s", version, publisher);
+      printf("\n\n\033[1m\033[32mVersion: %s\n\033[1m\033[31mMade by: %s\n\n", version, publisher);
+}
+
+void LoadPrompt(char LOADING_ITEM[], char LOADING_TYPE[])
+{
+    char LOADING_STATUS="⌛";
+    char COMPLETE_STATUS="✅";
+    int LOADING_STATUS = 0;
+    char * LOADING_STATUS_VIEW = LOADING_STATUS;
+    
+    printf("[%c] %s %s...\n", LOADING_STATUS_VIEW,LOADING_TYPE,LOADING_ITEM);
+}
+
+int main(int argc, char* argv[])
+{
+
+  if(argc==1)
+  {
+     
+      LoadPrompt("PLAYGROUND","INITALIZING");
   }
   return 0;  
 }
