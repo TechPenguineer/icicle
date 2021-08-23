@@ -45,3 +45,12 @@ else
     // CODE
 }
 ```
+
+# Arrays & Lists
+
+```c
+ my_array = []
+```
+```c 
+  my_list = {}
+```
