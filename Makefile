@@ -15,13 +15,14 @@
 CC=gcc
 SOURCES=$(wildcard src/*.c)
 NAME=icicle
-CFLAGS=-g $(SOURCES) 
+CFLAGS=-g $(SOURCES)
+BCFLAGS=-g $(SOURCES) $(wildcard benchmarks/*.*)
 
 install: include/%.h
 	$(CC) $(CFLAGS) -o $(wildcard bin/)icicle
 
 benchmark:
-	$(CC) $(CFLAGS) -o $(wildcard bin/)ibc
+	$(CC) $(BCFLAGS) -o $(wildcard bin/)ibc
 
 cln:
 	-rm out/*
