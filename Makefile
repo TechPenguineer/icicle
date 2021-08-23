@@ -13,19 +13,22 @@
 # limitations under the License.
 
 CC=gcc
-SOURCES=$(wildcard src/*.c)
+SOURCES=$(wildcard src/*.c) $(wildcard src/interpreter/*) $(wildcard benchmarks/*.*)
 NAME=icicle
 CFLAGS=-g $(SOURCES)
 BCFLAGS=-g $(SOURCES) $(wildcard benchmarks/*.*)
 
-install: include/%.h
-	$(CC) $(CFLAGS) -o $(wildcard bin/)icicle
+install: src/include/%.h
+	$(CC) $(CFLAGS) $(SOURCES) -o $(wildcard bin/)icicle
+	sudo $(CC) $(CFLAGS) $(SOURCES) -o /usr/local/bin/icicle
+	
 
 benchmark:
 	$(CC) $(BCFLAGS) -o $(wildcard bin/)ibc
 
 cln:
-	-rm out/*
+	-rm bin/*
+	-sudo rm /usr/local/bin/icicle
 
 dev:
 	-make cln
