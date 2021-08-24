@@ -21,6 +21,9 @@
 
 void GetFileData(char PATH[])
 {
+
+    #define CHUNK 1024
+    char buffer[CHUNK];
     int c;
     char EXT[] = ".ici";
 
@@ -31,7 +34,7 @@ void GetFileData(char PATH[])
 
     if (file)
     {
-        printf(file);
+        printf();
     }
     else
     {
