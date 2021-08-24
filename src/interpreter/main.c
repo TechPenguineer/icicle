@@ -16,13 +16,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-
+int IsInDevMode=0;
+char version[] = "0.0.0.1";
+char publisher[] = "Tech Penguineer";
+char line_pointer[] = "\033[34m=>\033[32m";
 void LoadPlayground(char LINE_POINTER[])
 {
-      char version[] = "0.0.0.1";
-      char publisher[] = "Tech Penguineer";
-      char line_pointer[] = "\033[34m=>\033[32m";
+
       printf("\033[1m\033[36m\n\n$$$$$$\\  $$$$$$\\  $$$$$$\\  $$$$$$\\  $$\\       $$$$$$$$\\ \n");
       printf("\\_$$  _|$$  __$$\\ \\_$$  _|$$  __$$\\ $$ |      $$  _____|\n");
       printf("  $$ |  $$ /  \\__|  $$ |  $$ /  \\__|$$ |      $$ |      \n");
@@ -34,23 +36,55 @@ void LoadPlayground(char LINE_POINTER[])
       printf("\n\n\033[1m\033[32mVersion: %s\n\033[1m\033[31mMade by: %s\n\n", version, publisher);
 }
 
+void Data()
+{
+    if (IsInDevMode==0)
+    {
+        printf("Icicle: You must be in dev mode to do that!\n");
+    }
+    else if(IsInDevMode==1)
+    {
+        printf("Version: %s\nPublisher: %s\nRelease Date: 8/23/2021\nDeveloper mode permission level: %i",version,publisher,IsInDevMode);
+    }
+    
+}
+void DevMode(int DevmodeVAL, int DevVAL)
+{
+    IsInDevMode=DevVAL;
+}
+
 void LoadPrompt(char LOADING_ITEM[], char LOADING_TYPE[])
 {
-    char LOADING_STATUS="⌛";
-    char COMPLETE_STATUS="✅";
+    char LOADING_STATUS_EMJ[]="⌛";
+    char COMPLETE_STATUS_EMJ[] ="✅";
+    char FAILED_STATUS_EMJ[] = "❌";
     int LOADING_STATUS = 0;
-    char * LOADING_STATUS_VIEW = LOADING_STATUS;
-    
-    printf("[%c] %s %s...\n", LOADING_STATUS_VIEW,LOADING_TYPE,LOADING_ITEM);
 }
 
 int main(int argc, char* argv[])
 {
 
   if(argc==1)
-  {
-     
+  { 
       LoadPrompt("PLAYGROUND","INITALIZING");
   }
+
+  if (strcmp(argv[1], "devmode")==0 && strcmp(argv[2],"enable")==0)
+  {
+      printf("Toggling Developer Mode\n");
+      DevMode(IsInDevMode,1);
+  }
+
+  if (strcmp(argv[1], "devmode")==0 && strcmp(argv[2],"unenable")==0)
+  {
+      printf("Untoggling Developer Mode\n");
+      DevMode(IsInDevMode,0);
+  }
+
+  if (strcmp(argv[1], "data")==0)
+  {
+      Data();
+  }
+  
   return 0;  
 }
