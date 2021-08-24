@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../include/io.h"
 
 int IsInDevMode=0;
 char version[] = "0.0.0.1";
@@ -84,6 +85,11 @@ int main(int argc, char* argv[])
   if (strcmp(argv[1], "data")==0)
   {
       Data();
+  }
+
+if (strcmp(argv[1], "reader")==0 && strcmp(argv[2], "-p")==0)
+  {
+      GetFileData(argv[3]);
   }
   
   return 0;  

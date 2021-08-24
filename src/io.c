@@ -14,3 +14,27 @@
  * limitations under the License.
  */
 
+#include "include/io.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+void GetFileData(char PATH[])
+{
+    int c;
+    char EXT[] = ".ici";
+
+    strcat(PATH,EXT);
+    
+    FILE *file;
+    file = fopen(PATH, "r");
+
+    if (file)
+    {
+        printf(file);
+    }
+    else
+    {
+        printf("\033[1m\033[31mIcicle IO Error: File path");
+    }
+}
