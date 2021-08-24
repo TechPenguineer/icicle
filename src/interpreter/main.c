@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
       DevMode(IsInDevMode,1);
   }
 
-  if (strcmp(argv[1], "devmode")==0 && strcmp(argv[2],"unenable")==0)
+  if (strcmp(argv[1], "devmode")==0 && strcmp(argv[2],"disable")==0)
   {
       printf("Untoggling Developer Mode\n");
       DevMode(IsInDevMode,0);
@@ -101,6 +101,11 @@ if (strcmp(argv[1], "sys")==0 &&strcmp(argv[2], "-ow")==0&&strcmp(argv[3], "writ
   {
       ForcewriteFile(argv[4]);
   }
+if (strcmp(argv[1], "help")==0)
+{
+    printf("Running:\nicicle run [PATH]\n\nDeveloper Tools: icicle dev reader -p [PATH] \n icicle sys write [PATH]\n icicle sys -ow write [PATH] \n icicle devmode enable/disable\n");
+}
+
 
   
   return 0;  
