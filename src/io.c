@@ -23,8 +23,9 @@ void GetFileData(char PATH[])
 {
 
     #define CHUNK 1024
-    char buffer[CHUNK];
+    char* buffer;
     int c;
+    long length;
     char EXT[] = ".ici";
 
     strcat(PATH,EXT);
@@ -34,10 +35,22 @@ void GetFileData(char PATH[])
 
     if (file)
     {
-        printf();
+        fseek(file,0,SEEK_END);
+        length = ftell(file);
+        fseek(file,0,SEEK_CUR);
+
+        buffer=calloc(length, sizeof(char));
+        
+        if(buffer)
+        {
+            fread(buffer, sizeof(char), length, file);
+            printf("\n\n%s\n\n",buffer);
+        }
+
+        fclose(file);
     }
     else
     {
-        printf("\033[1m\033[31mIcicle IO Error: File path");
+        printf("\033[1m\033[31mIcicle IO Error: File path \"%s\" not found\n",PATH);
     }
 }
