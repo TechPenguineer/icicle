@@ -97,6 +97,11 @@ if (strcmp(argv[1], "sys")==0 &&strcmp(argv[2], "write")==0)
       writeFile(argv[3]);
   }
 
+if (strcmp(argv[1], "sys")==0 &&strcmp(argv[2], "write")==0&&strcmp(argv[3], "-ow")==0)
+  {
+      ForcewriteFile(argv[4]);
+  }
+
   
   return 0;  
 }
