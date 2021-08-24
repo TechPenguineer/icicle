@@ -1,7 +1,6 @@
 NOTHING UP HERE WILL BE READ!!!
 
 $deff
-
     fx SayName(name)
         print("Hello ", name)
     endfn 

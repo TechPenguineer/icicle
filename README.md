@@ -1,7 +1,9 @@
 # icicle
  The dynamic-general-purpose language
 
-ICICLE - Icicle Coded in C like emulator 
+ICICLE - Icicle Coded in C like emulator
+
+Icicle- Is commanded in command line executable
 
 # CLI
 

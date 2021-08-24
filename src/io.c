@@ -47,7 +47,8 @@ void GetFileData(char PATH[])
         if(buffer)
         {
             fread(buffer, sizeof(char), length, file);
-            printf("\n\n%s\n\n",buffer);
+            GetFileStartToken(buffer);
+            GetFileExitToken(buffer);
         }
 
         fclose(file);
@@ -58,35 +59,61 @@ void GetFileData(char PATH[])
         printf("\033[1m\033[31mIcicle IO Error: File path \"%s\" not found\n",PATH);
     }
 }
-
-int GetFileStartAndEndTokenPosition(char FILECONTENT[])
+int GetFileExitToken(char * saux)
 {
-    int LENGTH_OF_FILE = strlen(FILECONTENT);
 
-    char TOKEN_TO_SEARCH_FOR_START[] = defineFileToken;
-    char TOKEN_TO_SEARCH_FOR_END[] = endFileToken;
+    char TOKEN_TO_SEARCH_FOR_START[] = "$deff";
+    char TOKEN_TO_SEARCH_FOR_END[] = "$endf";
 
-    char saux[] = FILECONTENT;
+    int dlenstr = strlen(saux);
+
+    if (dlenstr > 0)
+{
+    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_END); 
+    if (pfound != NULL)
+    {
+        int EXIT_TOKEN_POS = pfound - saux; 
+        printf("Exit Token: %i\n", EXIT_TOKEN_POS);
+        return EXIT_TOKEN_POS;
+    }
+    else if (pfound == NULL)
+    {
+        printf("\033[1m\033[31mIcicle Runtime Error: File exit was not found\n");
+    }
+    
+}
+
+
+}
+
+
+int GetFileStartToken(char * saux)
+{
+
+    char TOKEN_TO_SEARCH_FOR_START[] = "$deff";
+    char TOKEN_TO_SEARCH_FOR_END[] = "$endf";
+
     int dlenstr = strlen(saux);
 
     if (dlenstr > 0)
 {
     char *sfound = strstr(saux, TOKEN_TO_SEARCH_FOR_END);
-    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_START); //pointer to the first character found 's' in the string saux
-    if (pfound != NULL && sfound != NULL)
+    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_START); 
+    if (pfound != NULL)
     {
-        int dposfound = pfound - saux; //saux is already pointing to the first string character 't'.
-        return dposfound;
+        int START_TOKEN_POS = pfound - saux; 
+        printf("Definition Token: %i\n", START_TOKEN_POS);
+        return START_TOKEN_POS;
     }
     else if (pfound == NULL)
     {
         printf("\033[1m\033[31mIcicle Runtime Error: File definition was not found\n");
     }
-    else if (sfound == NULL)
-    {
-         printf("\033[1m\033[31mIcicle Runtime Error: File exit was not found\n");
+///    else if (sfound == NULL)
+ //   {
+ //        printf("\033[1m\033[31mIcicle Runtime Error: File exit was not found\n");
     
-    }
+ //   }
     
 }
 
@@ -109,9 +136,8 @@ void writeFile(char PATH[])
     {
         printf("\033[1m\033[31mIcicle IO Error: File path exists \"%s\"\n. If you wish to overwrite you can use the -ow flag. (NOT RECOMENDED)\n",PATH);
     }
-    
-
 }
+
 
 void ForcewriteFile(char PATH[])
 {
