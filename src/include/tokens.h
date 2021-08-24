@@ -12,7 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+    // FILE
+    char defineFileToken = "$deff";
+    char endFileToken = "$endf";
+    
     // FUNCTIONS
     char fnToken[] = "fn";
     char endfnToken[]="endfn";

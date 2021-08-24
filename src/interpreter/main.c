@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 
   if(argc==1)
   { 
-      LoadPrompt("PLAYGROUND","INITALIZING");
+      LoadPlayground(line_pointer);
   }
 
   if (strcmp(argv[1], "devmode")==0 && strcmp(argv[2],"enable")==0)

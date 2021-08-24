@@ -15,7 +15,7 @@
 CC=gcc
 SOURCES=$(wildcard src/*.c) $(wildcard src/interpreter/*.c) $(wildcard benchmarks/*.*)
 NAME=icicle
-CFLAGS=-g -w
+CFLAGS=-g #-w
 BCFLAGS=-g $(SOURCES) $(wildcard benchmarks/*.*)
 OS_NAME := $(shell uname -s | tr A-Z a-z)
 
