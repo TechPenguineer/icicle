@@ -87,9 +87,9 @@ int main(int argc, char* argv[])
       Data();
   }
 
-if (strcmp(argv[1], "reader")==0 && strcmp(argv[2], "-p")==0)
+if (strcmp(argv[1], "dev")==0 &&strcmp(argv[2], "reader")==0 && strcmp(argv[3], "-p")==0)
   {
-      GetFileData(argv[3]);
+      GetFileData(argv[4]);
   }
   
   return 0;  
