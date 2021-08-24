@@ -22,6 +22,8 @@
 
     // METHODS
     char printToken[] = "print";
+    char loopToken[] = "loop";
+
     
     // BRACKETS
     char leftParen[] = "(";
