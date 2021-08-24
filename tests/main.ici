@@ -1,3 +1,9 @@
-# File was successfully created
-# Language written by: Tech Penguineer
-# REPO: https://github.com/TechPenguineer/icicle
+$deff
+
+    fn SayName(name)
+        print("Hello ", name)
+    endfn 
+
+    SayName("Bob")
+
+$endf

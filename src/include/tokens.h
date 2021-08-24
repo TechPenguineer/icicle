@@ -13,15 +13,15 @@
 // limitations under the License.
 
     // FILE
-    char defineFileToken = "$deff";
-    char endFileToken = "$endf";
+    char defineFileToken[] = "$deff";
+    char endFileToken[] = "$endf";
     
     // FUNCTIONS
     char fnToken[] = "fn";
     char endfnToken[]="endfn";
 
     // VARIABLES
-    char defineToken[] = "!define"
+    char defineToken[] = "!define";
 
     // METHODS
     char printToken[] = "print";
@@ -31,11 +31,11 @@
     // BRACKETS
     char leftParen[] = "(";
     char rightParent[] = ")";
-    char quotationToken = "\"";
+    char quotationToken[] = "\"";
 
     // OPERATIONS
-    char equalToken = "=";
-    char addToken = "+";
-    char subtractToken = "-";
-    char divideToken = "/";
-    char multiplyToken = "*";
+    char equalToken[] = "=";
+    char addToken[] = "+";
+    char subtractToken[] = "-";
+    char divideToken[] = "/";
+    char multiplyToken[] = "*";

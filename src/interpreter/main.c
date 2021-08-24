@@ -103,7 +103,7 @@ if (strcmp(argv[1], "sys")==0 &&strcmp(argv[2], "-ow")==0&&strcmp(argv[3], "writ
   }
 if (strcmp(argv[1], "help")==0)
 {
-    printf("Running:\nicicle run [PATH]\n\nDeveloper Tools: icicle dev reader -p [PATH] \n icicle sys write [PATH]\n icicle sys -ow write [PATH] \n icicle devmode enable/disable\n");
+    printf("Running:\nicicle run [PATH]\n\nDeveloper Tools:\n icicle dev reader -p [PATH] \n icicle sys write [PATH]\n icicle sys -ow write [PATH] \n icicle devmode enable/disable\n");
 }
 
 
