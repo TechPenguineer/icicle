@@ -54,3 +54,45 @@ void GetFileData(char PATH[])
         printf("\033[1m\033[31mIcicle IO Error: File path \"%s\" not found\n",PATH);
     }
 }
+
+void writeFile(char PATH[])
+{
+    char EXT[] = ".ici";
+    char NEWFILEDATA[] = "# File was successfully created\n# Language written by: Tech Penguineer\n# REPO: https://github.com/TechPenguineer/icicle";
+    strcat(PATH,EXT);
+    FILE *f;
+    if (f)
+    {
+        printf("\033[1m\033[31mIcicle IO Error: File path exists \"%s\"\n. If you wish to overwrite you can use the -ow flag. (NOT RECOMENDED)\n",PATH);
+    }
+    else
+    {
+        f=fopen(PATH,"w");
+        fprintf(f,NEWFILEDATA);
+        printf("\033[0;32mSuccessfully created \"%s\"",PATH);
+
+    }
+    
+
+}
+
+void ForcewriteFile(char PATH[])
+{
+    char EXT[] = ".ici";
+    char NEWFILEDATA[] = "# File was successfully created\n# Language written by: Tech Penguineer\n# REPO: https://github.com/TechPenguineer/icicle";
+    strcat(PATH,EXT);
+    FILE *f;
+    if (f)
+    {
+        printf("\033[1m\033[31mFile overwriten. File data has been lost.\n You are unable to restore the lost data due to using the overwrite flag\n",PATH);  
+        f=fopen(PATH,"w");
+        fprintf(f,NEWFILEDATA);
+    }
+    else{
+        f=fopen(PATH,"w");
+        fprintf(f,NEWFILEDATA);
+        printf("\033[0;32mSuccessfully created \"%s\". No data was lost.",PATH); 
+    }
+   
+}
+

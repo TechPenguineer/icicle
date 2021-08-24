@@ -91,6 +91,12 @@ if (strcmp(argv[1], "dev")==0 &&strcmp(argv[2], "reader")==0 && strcmp(argv[3], 
   {
       GetFileData(argv[4]);
   }
+
+if (strcmp(argv[1], "sys")==0 &&strcmp(argv[2], "write")==0)
+  {
+      writeFile(argv[3]);
+  }
+
   
   return 0;  
 }
