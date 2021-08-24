@@ -18,6 +18,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "include/tokens.h"
+
+
 
 void GetFileData(char PATH[])
 {
@@ -54,6 +57,40 @@ void GetFileData(char PATH[])
     {
         printf("\033[1m\033[31mIcicle IO Error: File path \"%s\" not found\n",PATH);
     }
+}
+
+int GetFileStartAndEndTokenPosition(char FILECONTENT[])
+{
+    int LENGTH_OF_FILE = strlen(FILECONTENT);
+
+    char TOKEN_TO_SEARCH_FOR_START[] = defineFileToken;
+    char TOKEN_TO_SEARCH_FOR_END[] = endFileToken;
+
+    char saux[] = FILECONTENT;
+    int dlenstr = strlen(saux);
+
+    if (dlenstr > 0)
+{
+    char *sfound = strstr(saux, TOKEN_TO_SEARCH_FOR_END);
+    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_START); //pointer to the first character found 's' in the string saux
+    if (pfound != NULL && sfound != NULL)
+    {
+        int dposfound = pfound - saux; //saux is already pointing to the first string character 't'.
+        return dposfound;
+    }
+    else if (pfound == NULL)
+    {
+        printf("\033[1m\033[31mIcicle Runtime Error: File definition was not found\n");
+    }
+    else if (sfound == NULL)
+    {
+         printf("\033[1m\033[31mIcicle Runtime Error: File exit was not found\n");
+    
+    }
+    
+}
+
+
 }
 
 void writeFile(char PATH[])

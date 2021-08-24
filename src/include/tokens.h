@@ -17,8 +17,8 @@
     char endFileToken[] = "$endf";
     
     // FUNCTIONS
-    char fnToken[] = "fn";
-    char endfnToken[]="endfn";
+    char fnToken[] = "fx";
+    char endfnToken[]="endfx";
 
     // VARIABLES
     char defineToken[] = "!define";

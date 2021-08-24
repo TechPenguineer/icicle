@@ -2,13 +2,12 @@ NOTHING UP HERE WILL BE READ!!!
 
 $deff
 
-    fn SayName(name)
+    fx SayName(name)
         print("Hello ", name)
     endfn 
 
     SayName("Bob")
 
 $endf
-
 
 NOTHING DOWN HERE WILL BE READ!!!

@@ -18,5 +18,7 @@
 void GetFileData(char PATH[]);
 void writeFile(char PATH[]);
 void ForcewriteFile(char PATH[]);
+int GetFileStartAndEndTokenPosition(char FILECONTENT[])
+
 
 #endif
