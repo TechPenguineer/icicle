@@ -48,6 +48,7 @@ void GetFileData(char PATH[])
         }
 
         fclose(file);
+        return buffer;
     }
     else
     {
