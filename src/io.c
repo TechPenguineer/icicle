@@ -37,7 +37,7 @@ void GetFileData(char PATH[])
     {
         fseek(file,0,SEEK_END);
         length = ftell(file);
-        fseek(file,0,SEEK_CUR);
+        fseek(file,0,SEEK_SET);
 
         buffer=calloc(length, sizeof(char));
         
