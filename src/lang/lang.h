@@ -12,4 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-void lexer(char *DATA);
+
+// NOTE
+
+#include <stdio.h>
+
+void SKIP_NOTE_LINE(char* saux);

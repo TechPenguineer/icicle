@@ -19,6 +19,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "include/tokens.h"
+#include "include/lexer.h"
+
 
 
 
@@ -47,8 +49,22 @@ void GetFileData(char PATH[])
         if(buffer)
         {
             fread(buffer, sizeof(char), length, file);
-            GetFileStartToken(buffer);
-            GetFileExitToken(buffer);
+            int START_TOKEN_LOC = GetFileStartToken(buffer);
+
+            // END 
+            fseek(file,0,SEEK_END);
+            length = ftell(file);
+            // SET
+            fseek(file,START_TOKEN_LOC,SEEK_SET);
+
+            buffer=calloc(length, sizeof(char));
+
+            fread(buffer,sizeof(char),length,file);
+
+            lexer(buffer);
+
+            printf("\n%s\n",buffer);
+
         }
 
         fclose(file);
@@ -101,7 +117,7 @@ int GetFileStartToken(char * saux)
     char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_START); 
     if (pfound != NULL)
     {
-        int START_TOKEN_POS = pfound - saux; 
+        int START_TOKEN_POS = pfound - saux + 5; 
         printf("Definition Token: %i\n", START_TOKEN_POS);
         return START_TOKEN_POS;
     }

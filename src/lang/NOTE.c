@@ -14,12 +14,25 @@
  * limitations under the License.
  */
 
-#include "include/io.h"
-#include "lang/lang.h"
-#include "include/lexer.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "lang.h"
 
-void lexer(char *DATA)
+void SKIP_NOTE_LINE(char* saux)
 {
-    SKIP_NOTE_LINE(DATA);
+    char TOKEN_TO_SEARCH_FOR_NOTE[] = "#";
 
+    int dlenstr = strlen(saux);
+
+    if (dlenstr > 0)
+{
+    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_NOTE); 
+    if (pfound != NULL)
+    {
+        int START_TOKEN_POS = pfound - saux; 
+        printf("[%s] Token: %i\n",TOKEN_TO_SEARCH_FOR_NOTE,START_TOKEN_POS);
+        return START_TOKEN_POS;
+    }
+}
 }

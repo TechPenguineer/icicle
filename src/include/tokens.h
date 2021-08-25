@@ -19,7 +19,9 @@
     // FUNCTIONS
     char fnToken[] = "fx";
     char endfnToken[]="endfx";
-
+    
+    // NOTES
+    char noteToken[] = "#";
     // VARIABLES
     char defineToken[] = "!define";
 
