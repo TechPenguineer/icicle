@@ -14,40 +14,4 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "lang.h"
-
-void SKIP_NOTE_LINE(char* str)
-{
-	char NOTE_TOKEN[] = "#";
-	 int init_size = strlen(str);
-	char delim[] = " ";
-
-	char *ptr = strtok(str, delim);
-
-	while(ptr != NULL)
-	{
-		ptr = strtok(NULL, delim);
-		if (ptr == NOTE_TOKEN)
-		{
-			printf("COMMENT FOUND");
-		}
-		
-	}
-
-	/* This loop will show that there are zeroes in the str after tokenizing */
-	for (int i = 0; i < init_size; i++)
-	{
-		char TOKEN = str[i];
-		if (TOKEN==NOTE_TOKEN)
-		{
-			printf("COMMENT FOUND");
-		}
-			
-	}
-	printf("\n");
-
-	return 0;
-}
+void CREATE_METHOD(char TOKEN_NAME[]);
