@@ -17,7 +17,7 @@
 #include "lang.h"
 
 
-void print(char * saux)
+char * print(char * saux)
 {
     
     char TOKEN_TO_SEARCH_FOR_START[] = "print";

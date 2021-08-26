@@ -22,4 +22,4 @@
 void SKIP_NOTE_LINE(char* saux);
 void DEFINE(char DATA[]);
 char * PRINT_ARGS(int CURRENT_TOKEN_POS);
-void print(char * saux);
+char * print(char * saux);
