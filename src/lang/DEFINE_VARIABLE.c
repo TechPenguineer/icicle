@@ -17,11 +17,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../include/tokens.h"
 #include "lang.h"
 
-void SKIP_NOTE_LINE(char* str)
+void DEFINE(char DATA[])
 {
-	char NOTE_TOKEN[] = "#";
-	
-	
+    int LENGTH = strlen(DATA);
+    char defineToken[] = "!define";
+    
+    int i;
+    for(i=0;i<LENGTH;i++)
+    {
+        if (DATA[i]==defineToken)
+        {
+            printf("DEFINE TOKEN FOUND AT: %i", i);
+        }
+        
+    }
 }

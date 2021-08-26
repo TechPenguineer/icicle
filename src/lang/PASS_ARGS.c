@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "lang.h"
-
-void SKIP_NOTE_LINE(char* str)
+char * STRING_ARG_SINGLE()
 {
-	char NOTE_TOKEN[] = "#";
-	
-	
+    char PAREN_L = "(";
+    char PAREN_R = ")";
+    char QUOTATION = "\"";
+
+    
 }

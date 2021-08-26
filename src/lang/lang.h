@@ -18,3 +18,4 @@
 #include <stdio.h>
 
 void SKIP_NOTE_LINE(char* saux);
+void DEFINE(char DATA[]);

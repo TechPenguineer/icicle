@@ -14,14 +14,3 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "lang.h"
-
-void SKIP_NOTE_LINE(char* str)
-{
-	char NOTE_TOKEN[] = "#";
-	
-	
-}
