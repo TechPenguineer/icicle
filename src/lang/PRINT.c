@@ -14,3 +14,29 @@
  * limitations under the License.
  */
 
+#include "lang.h"
+
+
+void print(char * saux)
+{
+    
+    char TOKEN_TO_SEARCH_FOR_START[] = "print";
+
+    int dlenstr = strlen(saux);
+
+    if (dlenstr > 0)
+{
+    char *pfound = strstr(saux, TOKEN_TO_SEARCH_FOR_START); 
+    if (pfound != NULL)
+    {
+        int EXIT_TOKEN_POS = pfound - saux; 
+        PRINT_ARGS(EXIT_TOKEN_POS);
+        return EXIT_TOKEN_POS;
+    }
+    else if (pfound == NULL)
+    {
+        printf("\033[1m\033[31mIcicle Print Error: Print was not found\n");
+    }
+    
+}
+}

@@ -12,32 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-    // FILE
-    char defineFileToken[] = "$deff";
-    char endFileToken[] = "$endf";
-    
-    // FUNCTIONS
-    char fnToken[] = "fx";
-    char endfnToken[]="endfx";
-    
-    // NOTES
-    char noteToken[] = "#";
-    // VARIABLES
-    char defineToken[] = "!define";
-
-    // METHODS
-    char printToken[] = "print";
-    char loopToken[] = "loop";
-
-    
-    // BRACKETS
-    char leftParen[] = "(";
-    char rightParent[] = ")";
-    char quotationToken[] = "\"";
-
-    // OPERATIONS
-    char equalToken[] = "=";
-    char addToken[] = "+";
-    char subtractToken[] = "-";
-    char divideToken[] = "/";
-    char multiplyToken[] = "*";
+   // // FILE
+   // char defineFileToken[] = "$deff";
+   // char endFileToken[] = "$endf";
+   // 
+   // // FUNCTIONS
+   // char fnToken[] = "fx";
+   // char endfnToken[]="endfx";
+   // 
+   // // NOTES
+   // char noteToken[] = "#";
+   // // VARIABLES
+   // char defineToken[] = "!define";
+//
+   // // METHODS
+   // char printToken[] = "print";
+   // char loopToken[] = "loop";
+//
+   // 
+   // // BRACKETS
+   // char leftParen[] = "(";
+   // char rightParent[] = ")";
+   // char quotationToken[] = "\"";
+//
+   // // OPERATIONS
+   // char equalToken[] = "=";
+   // char addToken[] = "+";
+   // char subtractToken[] = "-";
+   // char divideToken[] = "/";
+   // char multiplyToken[] = "*";

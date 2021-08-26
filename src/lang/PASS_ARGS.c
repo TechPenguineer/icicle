@@ -14,11 +14,28 @@
  * limitations under the License.
  */
 
-char * STRING_ARG_SINGLE()
+#include <stdio.h>
+#include "lang.h"
+char * PRINT_ARGS(int CURRENT_TOKEN_POS)
 {
     char PAREN_L = "(";
     char PAREN_R = ")";
     char QUOTATION = "\"";
 
+    if (CURRENT_TOKEN_POS+1 == PAREN_L)
+    {
+        while (CURRENT_TOKEN_POS+2 != "\0")
+        {
+            if (CURRENT_TOKEN_POS+2 == QUOTATION)
+            {
+                printf("String started at: %i", CURRENT_TOKEN_POS+2);
+            }
+            
+        }
+        
+    }
     
+
+
+
 }

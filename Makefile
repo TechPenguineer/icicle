@@ -25,7 +25,7 @@ os_check:
 install: $(src/include/*.h) $(src/lang/*.h)
 	
 	make os_check
-	sudo $(CC) $(CFLAGS) $(SOURCES) -o /usr/local/bin/$(NAME)
+	sudo $(CC) $(CFLAGS) $(SOURCES) -o /usr/local/bin/$(NAME) -lm
 
 benchmark:
 #	$(CC) $(BCFLAGS) -o $(wildcard bin/)ibc

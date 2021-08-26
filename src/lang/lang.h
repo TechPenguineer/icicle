@@ -16,6 +16,10 @@
 // NOTE
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 void SKIP_NOTE_LINE(char* saux);
 void DEFINE(char DATA[]);
+char * PRINT_ARGS(int CURRENT_TOKEN_POS);
+void print(char * saux);

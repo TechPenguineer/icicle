@@ -23,5 +23,5 @@ void lexer(char *DATA)
     
     SKIP_NOTE_LINE(DATA);
     DEFINE(DATA);
-    
+    print(DATA);
 }
